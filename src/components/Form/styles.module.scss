@@ -10,21 +10,23 @@
   font-family: 'Ubuntu', sans-serif;
 
   .formContainer {
-    width: 60%;
+    width: 55%;
     height: 70%;
     display: flex;
     justify-content: space-between;
     padding: 15px;
     box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 15px;
     border-radius: 15px;
+    background: var(--white);
 
     .leftSide {
       width: 30%;
       height: 100%;
       background-image: url('./assets/background.svg');
       border-radius: 15px;
-      background-size: 100%;
+      background-size: 101%;
       background-position-y: 100%;
+      background-repeat: no-repeat;
 
       .stepsContainer {
         display: flex;
@@ -36,6 +38,13 @@
           cursor: pointer;
           display: flex;
           gap: 20px;
+          z-index: 1;
+
+          &:hover .number {
+            background-color: var(--lightgray);
+            cursor: pointer;
+            color: var(--puprplishblue);
+          }
 
           .number {
             display: flex;
@@ -46,12 +55,20 @@
             border-radius: 50px;
             border: 1px solid var(--lightgray);
             font-weight: 700;
+            transition: 0.4s;
+          }
 
-            &:hover {
-              background-color: var(--lightgray);
-              cursor: pointer;
-              color: var(--puprplishblue);
-            }
+          .numberActived {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--puprplishblue);
+            padding: 10px 15px;
+            border-radius: 50px;
+            border: 1px solid var(--lightgray);
+            background-color: var(--lightgray);
+            font-weight: 700;
+            transition: 0.4s;
           }
 
           .details {
@@ -72,6 +89,12 @@
           }
         }
       }
+    }
+
+    .rightSide {
+      width: 70%;
+      height: 100%;
+      padding-top: 50px;
     }
   }
 }
